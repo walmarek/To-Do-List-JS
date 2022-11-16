@@ -1,6 +1,6 @@
-let firstName = prompt("What is your name?", "Your name");
+// let firstName = prompt("What is your name?", "Your name");
 
-console.log("Hello " + firstName);
+// console.log("Hello " + firstName);
 
 {
   const tasks = [
@@ -18,18 +18,37 @@ console.log("Hello " + firstName);
     let htmlString = "";
 
     for (const task of tasks) {
-        htmlString += `
-        <li>
-        ${task.content}, ${task.done}
+      htmlString += `
+        <li${task.done ? ' style="text-decoration: line-through"' : ""}>
+        ${task.content}
         </li>
         `;
     }
-document.querySelector(".js-tasks").innerHTML = htmlString;
+    document.querySelector(".js-tasks").innerHTML = htmlString;
+  };
 
+  const addNewTask = (newTaskContent) => {
+    tasks.push({
+      content: newTaskContent,
+    });
+    render();
+  };
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+
+    const newTaskContent = document.querySelector(".js-form-task").value.trim();
+    if (newTaskContent === "") {
+      return;
+    }
+    addNewTask(newTaskContent);
   };
 
   const init = () => {
-    render()
+    render();
+
+    const form = document.querySelector(".js-form");
+    form.addEventListener("submit", onFormSubmit);
   };
 
   init();
