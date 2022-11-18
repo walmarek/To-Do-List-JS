@@ -8,8 +8,24 @@ html {
   box-sizing: inherit;
 }
 
-body {
+.body {
   font-family: "Lato", sans-serif;
-  background-color: #fff;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.main {
+  flex-basis: 900px;
+  max-width: 95%;
+  margin: 10px
+}
+
+.main__header {
+  margin-bottom: 10px;
+  margin-top: 40px;
+  font-weight: 700;
+}
+
 
