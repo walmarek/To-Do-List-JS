@@ -23,37 +23,52 @@
     <script defer src="js/script.js"></script>
   </head>
   <body class="body">
-    
     <main class="main">
-      <div >
+      <div>
         <h1 class="main__header">To-do list:</h1>
       </div>
-      
       <section class="section">
         <h2 class="section__header">Add new task</h2>
       </section>
-
       <section class="section">
         <form class="section__form js-form">
-          <input class="section__form--input section__form--item section__form--item-input js-form-task" placeholder=" What's your new task?" />
-          <button class="section__form--button section__form--item" focus="section__form--item-input">Add task</button>
+          <input
+            class="section__form--input section__form--item section__form--item-input js-form-task"
+            placeholder=" What's your new task?"
+          />
+          <button class="section__form--button section__form--item">
+            Add task
+          </button>
         </form>
       </section>
       <section class="section section__list">
         <h2 class="section__header">To-do list:</h2>
       </section>
       <section class="section section--tasks">
-        <div class="section--tasks-item section--tasks-itemCheck"><input class="section--task-itemCheck-input" type="checkbox" value="true"></div>
-        <div class="section--tasks-item section--tasks-itemTask js-tasks">new task Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint repudiandae laborum, pariatur unde totam doloribus explicabo quisquam? Fugiat itaque fugit ipsa, provident quisquam repellendus fuga facilis, amet molestiae nam cumque?</div>
-        <div class="section--tasks-item section--tasks-itemDelete"><button class=" section--tasks-itemDelete-button js-tasks-delete"></button></div>
+        <div class="section--tasks-item section--tasks-itemCheckbox">
+          <label class="section--tasks-itemCheckbox-label"
+            ><input
+              class="section--task-itemCheckbox-input"
+              type="checkbox"
+              checked="checked"
+              value="true"
+          /><span class="section__task-itemCheckbox-checkmark"></span></label>
+        </div>
+        <div class="section--tasks-item section--tasks-itemTask js-tasks">Lorem ipsum dolor sit amet consectetur!</div>
+        <div class="section--tasks-item section--tasks-itemDelete">
+          <button
+            class="section--tasks-itemDelete-button js-tasks-delete"
+            alt="detete button"
+          >
+            <img
+              class="section__task-itemDelete-icon"
+              src="../images/bin32x32.ico"
+            />
+          </button>
+        </div>
       </section>
-      <section class="section section--tasks">
-      </section>
-      <section>
-        
-          
-      
-      </section>
+      <section class="section section--tasks"></section>
+      <section></section>
     </main>
   </body>
 </html>
