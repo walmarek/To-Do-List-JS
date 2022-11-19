@@ -4,7 +4,6 @@
 }
 
 .section__header {
-  border: none;
   margin-left: 20px;
   font-size: 20px;
   height: 20px;
@@ -59,7 +58,7 @@ margin-right: 15px;
 .section__form {
   display: flex;
   padding: 15px 10px;
-  margin: 10 auto;
+
 }
 
 .section__form--input {
@@ -96,7 +95,6 @@ margin-right: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -104,13 +102,10 @@ margin-right: 15px;
 }
 
 .section--tasks-itemCheckbox-label input {
-  position: absolute;
-  opacity: 0;
+display: none;
 }
 
 .section__task-itemCheckbox-checkmark {
-  padding: 0;
-  margin: 0;
   position: absolute;
   height: 23px;
   width: 23px;
