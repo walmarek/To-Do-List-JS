@@ -6,59 +6,74 @@
 .section__header {
   margin-left: 20px;
   font-size: 20px;
-  height: 20px;
 }
 
-.section__list {
+.section--items-list {
+  padding: 10px;
+  margin: 0;
+ min-height: 28px;
+}
+
+.section__list--header {
   margin-top: 6px;
   padding: 0;
 }
 
 .section--tasks {
-  padding: 4px;
-  border: none;
+  padding-top: 10px
+}
+
+.section--tasks-list {
+  padding-top: 10px;
+  margin: 4px;
+  border-bottom: 1px solid #eee;
   display: grid;
-  grid-template-columns: 50px 1fr 50px;
+  grid-template-columns: 36px 1fr 36px;
+  grid-gap: 4px;
 }
 
 .section--tasks-item {
-  padding: 10px;
-  margin: 10px 0 10px 0;
-  border-bottom: 1px solid #eee;
-  display: grid;
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
+  margin: auto;
 }
 
-.section--tasks-itemDelete-button {
+.section--task-itemContent {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.section--tasks-itemButton {
   border: none;
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.section--tasks-itemButton-done {
+  background-color: green;
+  border: 6px solid#fff;
+  height: 32px;
+  width: 32px;
+}
+
+.section--tasks-itemButton-doneChecked {
+  width: 16px;
+  height: 16px;
 }
 
 .section--tasks-itemTask {
   justify-content: left;
 }
 
-.section--task-itemCheckbox-input {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.section--tasks-itemCheckbox {
-margin-left: 15px;
-}
-
-.section--tasks-itemDelete {
-margin-right: 15px;
-}
-
 .section__form {
   display: flex;
   padding: 15px 10px;
-
 }
 
 .section__form--input {
@@ -74,7 +89,7 @@ margin-right: 15px;
 .section__form--item {
   width: 20%;
   padding: 8px;
-  margin: 5px;
+  margin: 4px 8px;
 }
 
 .section__form--item-input {
@@ -89,55 +104,4 @@ margin-right: 15px;
   .section__form--item {
     width: 100%;
   }
-}
-
-.section--tasks-itemCheckbox-label {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.section--tasks-itemCheckbox-label input {
-display: none;
-}
-
-.section__task-itemCheckbox-checkmark {
-  position: absolute;
-  height: 23px;
-  width: 23px;
-  background-color: green;
-}
-
-.section--tasks-itemCheckbox-label:hover
-  input
-  ~ .section__task-itemCheckbox-checkmark {
-  background-color: green;
-}
-
-.section__task-itemCheckbox-checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.section--tasks-itemCheckbox-label
-  input:checked
-  ~ .section__task-itemCheckbox-checkmark:after {
-  display: block;
-}
-
-.section--tasks-itemCheckbox-label .section__task-itemCheckbox-checkmark:after {
-  left: 8px;
-  top: 4px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
 }

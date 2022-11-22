@@ -31,48 +31,25 @@
         <h2 class="section__header">Add new task</h2>
       </section>
       <section class="section">
-        <form class="section__form js-form">
+        <form ref="{formRef}" class="section__form js-form" name="form">
           <input
-            class="section__form--input section__form--item section__form--item-input js-form-task"
+            class="section__form--input section__form--item section__form--item-input js-form-input"
             placeholder=" What's your new task?"
           />
-          <button class="section__form--button section__form--item">
+          <button
+            class="section__form--button section__form--item js-form-button"
+            type="submit"
+          >
             Add task
           </button>
         </form>
       </section>
-      <section class="section section__list">
+      <section class="section section__list--header">
         <h2 class="section__header">To-do list:</h2>
       </section>
       <section class="section section--tasks">
-        <div class="section--tasks-item section--tasks-itemCheckbox">
-          <label class="section--tasks-itemCheckbox-label"
-            ><input
-              class="section--task-itemCheckbox-input"
-              type="checkbox"
-              checked="checked"
-              value="true"
-          /><span class="section__task-itemCheckbox-checkmark"></span></label>
-        </div>
-        <div class="section--tasks-item section--tasks-itemTask"><ul class="js-tasks"></ul></div>
-        <div class="section--tasks-item section--tasks-itemDelete">
-          <button
-            class="section--tasks-itemDelete-button js-tasks-delete"
-            alt="detete button"
-          >
-            <img
-              class="section__task-itemDelete-icon"
-              src="../images/bin32x32.ico"
-            />
-          </button>
-        </div>
+        <ul class="section--items-list js-tasks"></ul>
       </section>
-      <!-- <form class="js-form">
-        <input class="js-new-task">
-      <button>Add task</button>
-      </form> -->
-      <!-- <ul class="js-tasks"></ul> -->
     </main>
   </body>
 </html>
-
