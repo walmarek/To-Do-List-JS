@@ -11,7 +11,7 @@ Demo
 </h2>
 
 <p align="center">
-  <img src="">
+  <img src="https://github.com/walmarek/to-do-list/blob/master/gif/todolist.gif?raw=true">
 </p>
 
 <h3 align="left">Languages and Tools used i this app:</h3>
