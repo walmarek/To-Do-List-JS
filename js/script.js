@@ -55,7 +55,7 @@ console.log("Hi everyone");
              alt="checkbox button"
              ><img class="section--tasks-itemButton-doneChecked" ${
                task.done ? "" : 'style="display: none"'
-             } src="/images/checkmark-24.ico"/>
+             } src="images/checkmark-24.ico"/>
            </button>
          </div>
          <div class="section--task-itemContent" ${
@@ -69,7 +69,7 @@ console.log("Hi everyone");
              alt="detete button"
              >
              <img
-              src="/images/bin32x32.ico"
+              src="images/bin32x32.ico"
              />
            </button>
          </div>
