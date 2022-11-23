@@ -1,6 +1,7 @@
 .section {
   border: 1px solid #eee;
   background-color: #fff;
+  box-shadow: 0 0 5px #ddd;
 }
 
 .section__header {
@@ -11,16 +12,16 @@
 .section__list {
   padding: 10px;
   margin: 0;
- min-height: 28px;
+  min-height: 28px;
 }
 
-.section--size {
+.section--listTitle {
   margin-top: 6px;
   padding: 0;
 }
 
 .section--tasks {
-  padding-top: 10px
+  padding-top: 10px;
 }
 
 .section__item {
@@ -45,7 +46,7 @@
   justify-content: left;
 }
 
-.section__item--button {
+.section__item--button-remove {
   border: none;
   background-color: #fff;
   cursor: pointer;
@@ -56,11 +57,26 @@
   padding: 0;
 }
 
-.section__item--button-done {
+.section__item--button-remove:hover {
+  background-color: #eee;
+}
+.section__item--button-remove:active {
+background-color: #ddd;
+}
+
+.section__item--button-toggleDone {
   background-color: green;
   border: 6px solid#fff;
   height: 32px;
   width: 32px;
+}
+
+.section__item--button-toggleDone:hover {
+  background-color: hsl(120, 100%, 30%);
+}
+
+.section__item--button-toggleDone:active {
+  background-color: hsl(120, 100%, 35%);
 }
 
 .section__item--button-checked {
@@ -78,6 +94,14 @@
   color: #fff;
   cursor: pointer;
   border: none;
+}
+
+.section__form--button:hover {
+  background-color: hsl(180, 100%, 30%);
+}
+
+.section__form--button:active {
+  background-color: hsl(180, 100%, 35%);
 }
 
 .section__form--item {

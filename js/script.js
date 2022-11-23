@@ -57,7 +57,7 @@ console.log("Hi everyone");
        <li class="section__item">
          <div class="section__item-element">
            <button
-              class="section__item--button section__item--button-done js-task-done"
+              class="section__item--button section__item--button-toggleDone js-task-done"
               alt="checkbox button"
             ><img class="section__item--button-checked" ${
               task.done ? "" : 'style="display: none"'
@@ -70,7 +70,7 @@ console.log("Hi everyone");
           </div>
           <div class="section__item--element">
            <button
-             class="section__item--button section__item--button-remove js-task-remove"
+             class="section__item--button-remove section__item--button-remove js-task-remove"
              alt="delete button"
             >
              <img
