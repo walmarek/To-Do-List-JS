@@ -8,13 +8,13 @@
   font-size: 20px;
 }
 
-.section--items-list {
+.section__list {
   padding: 10px;
   margin: 0;
  min-height: 28px;
 }
 
-.section__list--header {
+.section--size {
   margin-top: 6px;
   padding: 0;
 }
@@ -23,7 +23,7 @@
   padding-top: 10px
 }
 
-.section--tasks-list {
+.section__item {
   padding-top: 10px;
   margin: 4px;
   border-bottom: 1px solid #eee;
@@ -32,22 +32,23 @@
   grid-gap: 4px;
 }
 
-.section--tasks-item {
+.section__item--element {
   display: flex;
   align-items: center;
   justify-items: center;
   margin: auto;
 }
 
-.section--task-itemContent {
+.section__item--content {
   display: flex;
   align-items: center;
   justify-content: left;
 }
 
-.section--tasks-itemButton {
+.section__item--button {
   border: none;
   background-color: #fff;
+  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,20 +56,16 @@
   padding: 0;
 }
 
-.section--tasks-itemButton-done {
+.section__item--button-done {
   background-color: green;
   border: 6px solid#fff;
   height: 32px;
   width: 32px;
 }
 
-.section--tasks-itemButton-doneChecked {
+.section__item--button-checked {
   width: 16px;
   height: 16px;
-}
-
-.section--tasks-itemTask {
-  justify-content: left;
 }
 
 .section__form {
@@ -76,13 +73,10 @@
   padding: 15px 10px;
 }
 
-.section__form--input {
-  border: 1px solid #eee;
-}
-
 .section__form--button {
   background-color: teal;
   color: #fff;
+  cursor: pointer;
   border: none;
 }
 
@@ -92,7 +86,8 @@
   margin: 4px 8px;
 }
 
-.section__form--item-input {
+.section__form--input {
+  border: 1px solid #eee;
   width: 80%;
   text-align: left;
 }

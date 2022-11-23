@@ -21,9 +21,15 @@ console.log("Hi everyone");
     render();
   };
 
-  document.querySelector(".js-form-button").addEventListener("click", () => {
-    document.querySelector(".js-form-input").focus();
-  });
+  const focusOnInput = () => {
+    const formButton = document.querySelector(".js-form-button");
+
+    formButton.addEventListener("click", () => {
+      document.querySelector(".js-form-input").focus();
+    });
+  };
+
+  focusOnInput();
 
   const bindEvents = () => {
     const removeButtons = document.querySelectorAll(".js-task-remove");
@@ -48,26 +54,25 @@ console.log("Hi everyone");
 
     for (const task of tasks) {
       htmlString += `
-       <li class="section--tasks-list">
-         <div class="section--tasks-item">
+       <li class="section__item">
+         <div class="section__item-element">
            <button
-             class="section--tasks-itemButton section--tasks-itemButton-done js-task-done"
-             alt="checkbox button"
-             ><img class="section--tasks-itemButton-doneChecked" ${
-               task.done ? "" : 'style="display: none"'
+              class="section__item--button section__item--button-done js-task-done"
+              alt="checkbox button"
+            ><img class="section__item--button-checked" ${
+              task.done ? "" : 'style="display: none"'
              } src="images/checkmark-24.ico"/>
-           </button>
+            </button>
          </div>
-         <div class="section--task-itemContent" ${
-           task.done ? 'style="text-decoration: line-through"' : ""
-         }>${task.content}
-         </div>
-       
-          <div class="section--tasks-item">
+         <div class="section__item--content" ${
+           task.done ? 'style="text-decoration: line-through"' : ""}
+          >${task.content}
+          </div>
+          <div class="section__item--element">
            <button
-             class="section--tasks-itemButton section--tasks-itemButton-remove  js-task-remove"
-             alt="detete button"
-             >
+             class="section__item--button section__item--button-remove js-task-remove"
+             alt="delete button"
+            >
              <img
               src="images/bin32x32.ico"
              />
