@@ -29,15 +29,8 @@
   margin: 4px;
   border-bottom: 1px solid #eee;
   display: grid;
-  grid-template-columns: 36px 1fr 36px;
+  grid-template-columns: 40px 1fr 40px;
   grid-gap: 4px;
-}
-
-.section__item--element {
-  display: flex;
-  align-items: center;
-  justify-items: center;
-  margin: auto;
 }
 
 .section__item--content {
@@ -46,42 +39,45 @@
   justify-content: left;
 }
 
-.section__item--button-remove {
+.section__item--button {
+  width: 24px;
+height: 24px;
   border: none;
-  background-color: #fff;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  padding: 0;
+  margin: 6px;
+}
+
+.section__item--button-icon {
+width: 18px;
+height: 18px;
+}
+
+.section__item--button-remove {
+ background-color: rgb(218, 6, 6);
+ transition: 1.2s;
 }
 
 .section__item--button-remove:hover {
-  background-color: #eee;
+  background-color: hsl(0, 100%, 60%);
 }
 .section__item--button-remove:active {
-background-color: #ddd;
+background-color: hsl(0, 100%, 70%);
 }
 
 .section__item--button-toggleDone {
   background-color: green;
-  border: 6px solid#fff;
-  height: 32px;
-  width: 32px;
+  transition: 1.2s;
 }
 
 .section__item--button-toggleDone:hover {
-  background-color: hsl(120, 100%, 30%);
-}
-
-.section__item--button-toggleDone:active {
   background-color: hsl(120, 100%, 35%);
 }
 
-.section__item--button-checked {
-  width: 16px;
-  height: 16px;
+.section__item--button-toggleDone:active {
+  background-color: hsl(120, 100%, 45%);
 }
 
 .section__form {
@@ -94,14 +90,16 @@ background-color: #ddd;
   color: #fff;
   cursor: pointer;
   border: none;
+  transition: 1.2s;
 }
 
 .section__form--button:hover {
-  background-color: hsl(180, 100%, 30%);
+  background-color: hsl(180, 100%, 35%);
+  transform: scale(1.1);
 }
 
 .section__form--button:active {
-  background-color: hsl(180, 100%, 35%);
+  background-color: hsl(180, 100%, 45%);
 }
 
 .section__form--item {

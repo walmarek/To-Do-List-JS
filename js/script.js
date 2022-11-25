@@ -1,14 +1,10 @@
-console.log("Hi everyone");
-
+console.log("Hi everyone!");
 {
   const tasks = [];
 
   const addNewTask = (newTaskContent) => {
-    tasks.push({
-      content: newTaskContent,
-    });
+    tasks.push({ content: newTaskContent });
     render();
-    document.querySelector(".js-form-input").value = "";
   };
 
   const removeTask = (taskIndex) => {
@@ -21,17 +17,7 @@ console.log("Hi everyone");
     render();
   };
 
-  const focusOnInput = () => {
-    const formButton = document.querySelector(".js-form-button");
-
-    formButton.addEventListener("click", () => {
-      document.querySelector(".js-form-input").focus();
-    });
-  };
-
-  focusOnInput();
-
-  const bindEvents = () => {
+  const bindRemoveEvents = () => {
     const removeButtons = document.querySelectorAll(".js-task-remove");
 
     removeButtons.forEach((removeButton, index) => {
@@ -39,10 +25,12 @@ console.log("Hi everyone");
         removeTask(index);
       });
     });
+  };
 
-    const taggleDoneButtons = document.querySelectorAll(".js-task-done");
+  const bindToggleDoneEvents = () => {
+    const toggleDoneButtons = document.querySelectorAll(".js-task-done");
 
-    taggleDoneButtons.forEach((toggleDoneButton, index) => {
+    toggleDoneButtons.forEach((toggleDoneButton, index) => {
       toggleDoneButton.addEventListener("click", () => {
         toggleTaskDone(index);
       });
@@ -50,64 +38,59 @@ console.log("Hi everyone");
   };
 
   const render = () => {
-    let htmlString = "";
+    let taskContentHTML = "";
 
     for (const task of tasks) {
-      htmlString += `
+      taskContentHTML += `
        <li class="section__item">
-         <div class="section__item-element">
            <button
               class="section__item--button section__item--button-toggleDone js-task-done"
               alt="checkbox button"
-            ><img class="section__item--button-checked" ${
-              task.done ? "" : 'style="display: none"'
-             } src="images/checkmark-24.ico"/>
+            >
+              <img class="section__item--button-icon" ${
+                task.done ? "" : 'style="display: none"'
+              } src="images/checkmark-24.ico"/>
             </button>
-         </div>
-         <div class="section__item--content" ${
-           task.done ? 'style="text-decoration: line-through"' : ""}
-          >${task.content}
-          </div>
-          <div class="section__item--element">
+           <span class="section__item--content" ${
+             task.done ? 'style="text-decoration: line-through"' : ""
+           }
+            >${task.content}
+            </span>
            <button
-             class="section__item--button-remove section__item--button-remove js-task-remove"
+             class="section__item--button section__item--button-remove js-task-remove"
              alt="delete button"
             >
-             <img
-              src="images/bin32x32.ico"
-             />
+             <img class="section__item--button-icon"
+              src="images/bin24x24.ico"/>
            </button>
-         </div>
        </li>
       `;
     }
 
-    document.querySelector(".js-tasks").innerHTML = htmlString;
+    document.querySelector(".js-tasks").innerHTML = taskContentHTML;
 
-    bindEvents();
+    bindRemoveEvents();
+    bindToggleDoneEvents();
   };
 
   const onFormSubmit = (event) => {
     event.preventDefault();
 
-    const newTaskContent = document
-      .querySelector(".js-form-input")
-      .value.trim();
-    if (newTaskContent === "") {
-      return;
+    const newTaskElement = document.querySelector(".js-form-input");
+    const newTaskContent = newTaskElement.value.trim();
+
+    if (newTaskContent !== "") {
+      addNewTask(newTaskContent);
+      newTaskElement.value = "";
     }
 
-    addNewTask(newTaskContent);
+    newTaskElement.focus();
   };
 
   const init = () => {
     render();
-
     const form = document.querySelector(".js-form");
-
     form.addEventListener("submit", onFormSubmit);
-
-    onFormSubmit.value = "";
   };
 
   init();
