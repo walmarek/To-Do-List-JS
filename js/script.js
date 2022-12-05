@@ -82,11 +82,12 @@ console.log("Hi everyone!");
 
     if (tasks.length !== 0) {
       taskOptionButtonsHTML += `
-      <button class="section__list--button js-hide-button">
+      <button class="list__button js-hide-button">
         ${hideDoneTasks ? "Show" : "Hide"} completed
       </button>
-      <button class="section__list--button js-all-done-button" 
-       ${tasks.every(({ done }) => done) ? "disabled" : ""}>Complete all
+      <button class="list__button js-all-done-button" 
+       ${tasks.every(({ done }) => done) ? "disabled" : ""}>
+       Complete all
       </button>`;
     }
 
@@ -95,38 +96,34 @@ console.log("Hi everyone!");
   };
 
   const renderTasks = () => {
-    let taskContentHTML = "";
-
-    for (const task of tasks) {
-      taskContentHTML += `
-     <li class="section__item ${
-       task.done && hideDoneTasks ? "section__item--hidden" : ""
-     }">
+    const taskToHTML = (task) => `
+     <li class="list__item ${
+       task.done && hideDoneTasks ? "list__item--hidden" : ""
+     }"
+      >
          <button
-            class="section__item--button section__item--button-toggleDone js-task-done"
+            class="list__item--button list__item--button-toggleDone js-task-done"
             alt="checkbox button"
           >
-            <img class="section__item--button-icon" ${
-              task.done ? "" : 'style="display: none"'
-            } src="images/checkmark-24.ico"/>
+            <img class="list__item--button-icon ${
+              task.done ? "" : "list__item--button-icon-hidden"
+            }" src="images/checkmark-24.ico"/>
           </button>
-         <span class="section__item--content" ${
-           task.done ? 'style="text-decoration: line-through"' : ""
-         }
+         <span class=" ${task.done ? "list__item--content-done" : ""}"
           >${task.content}
           </span>
          <button
-           class="section__item--button section__item--button-remove js-task-remove"
+           class="list__item--button list__item--button-remove js-task-remove"
            alt="delete button"
           >
-           <img class="section__item--button-icon"
+           <img class="list__item--button-icon"
             src="images/bin24x24.ico"/>
          </button>
      </li>
     `;
-    }
 
-    document.querySelector(".js-tasks").innerHTML = taskContentHTML;
+    const taskContent = document.querySelector(".js-tasks");
+    taskContent.innerHTML = tasks.map(taskToHTML).join("");
   };
 
   const render = () => {
