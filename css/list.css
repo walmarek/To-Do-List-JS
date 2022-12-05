@@ -1,0 +1,100 @@
+.list {
+    padding: 20px;
+    margin: 0;
+    list-style: none;
+  }
+  
+  .list--buttons {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .list__button {
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    color: teal;
+    transition: 0.5s;
+  }
+  
+  @media (max-width: 767px) {
+    .list__button {
+        width: 100%;
+        margin: 10px;
+    }
+  }
+  
+  .list__button:hover {
+    color: hsl(180, 100%, 35%);
+  }
+  
+  .list__button:active {
+    color: hsl(180, 100%, 45%);
+  }
+  
+  .list__button:disabled {
+    color: #bbb;
+    cursor: default;
+  }
+  
+  .list__item {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-gap: 10px;
+    align-items: center;
+  }
+  
+  .list__item--hidden {
+    display: none;
+  }
+  
+  .list__item--content-done {
+  text-decoration: line-through;
+  }
+  
+  .list__item--button {
+    width: 24px;
+    height: 24px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 6px;
+  }
+  
+  .list__item--button-icon {
+    width: 18px;
+    height: 18px;
+  }
+  
+  .list__item--button-icon-hidden {
+    display: none;
+  }
+  
+  .list__item--button-remove {
+    background-color: rgb(218, 6, 6);
+    transition: 0.5s;
+  }
+  
+  .list__item--button-remove:hover {
+    background-color: hsl(0, 100%, 60%);
+  }
+  .list__item--button-remove:active {
+    background-color: hsl(0, 100%, 70%);
+  }
+  
+  .list__item--button-toggleDone {
+    background-color: green;
+    transition: 0.5s;
+  }
+  
+  .list__item--button-toggleDone:hover {
+    background-color: hsl(120, 100%, 35%);
+  }
+  
+  .list__item--button-toggleDone:active {
+    background-color: hsl(120, 100%, 45%);
+  }

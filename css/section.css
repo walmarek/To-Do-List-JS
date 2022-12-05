@@ -5,180 +5,33 @@
 }
 
 .section__header {
-  margin-left: 20px;
   font-size: 20px;
+  border-bottom: 1px solid #eee;
+  margin: 0;
+  padding: 20px;
 }
 
-.section__header--item {
-  width: 100%;
+.section__header--list {
+  font-size: 20px;
+  margin: 0;
+}
+
+.section__body {
+  padding: 20px;
 }
 
 .section__list {
-  padding: 10px;
-  margin: 0;
-  min-height: 28px;
+border-bottom: 1px solid #eee;
+padding: 20px;
+display: grid;
+grid-template-columns: auto auto;
+grid-gap: 20px;
+justify-content: space-between;
+align-items: center;
 }
 
-.section--listTitle {
-  margin-top: 6px;
-  padding: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.section__list--buttons {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 60%;
-}
-
-.section__list--button {
-  border: none;
-  cursor: pointer;
-  background: transparent;
-  color: teal;
-  transition: 1s;
-}
-
-@media (max-width: 767px) {
-  .section__list--buttons {
-    display: inline-block;
-    margin: 10px;
-    margin-top: 0;
-  }
-  .section__list--button {
-    width: 100%;
-    padding: 12px;
-    transform: none;
-  }
-}
-
-@media (max-width: 767px) {
-  .section--listTitle {
-    flex-wrap: wrap;
-  }
-  .section__header--item {
-    width: 100%;
-  }
-}
-
-.section__list--button:hover {
-  color: hsl(180, 100%, 35%);
-}
-
-.section__list--button:active {
-  color: hsl(180, 100%, 45%);
-}
-
-.section__list--button:disabled {
-  color: #bbb;
-  cursor: default;
-}
-
-.section--tasks {
-  padding-top: 10px;
-}
-
-.section__item {
-  padding: 10px 0 0 0;
-  margin: 10px;
-  border-bottom: 1px solid #eee;
-  display: grid;
-  grid-template-columns: 40px 1fr 40px;
-  grid-gap: 5px;
-}
-
-.section__item--hidden {
-  display: none;
-}
-
-.section__item--content {
-  display: flex;
-  align-items: center;
-  justify-content: left;
-}
-
-.section__item--button {
-  width: 24px;
-  height: 24px;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 6px;
-}
-
-.section__item--button-icon {
-  width: 18px;
-  height: 18px;
-}
-
-.section__item--button-remove {
-  background-color: rgb(218, 6, 6);
-  transition: 1s;
-}
-
-.section__item--button-remove:hover {
-  background-color: hsl(0, 100%, 60%);
-}
-.section__item--button-remove:active {
-  background-color: hsl(0, 100%, 70%);
-}
-
-.section__item--button-toggleDone {
-  background-color: green;
-  transition: 1s;
-}
-
-.section__item--button-toggleDone:hover {
-  background-color: hsl(120, 100%, 35%);
-}
-
-.section__item--button-toggleDone:active {
-  background-color: hsl(120, 100%, 45%);
-}
-
-.section__form {
-  display: flex;
-  padding: 15px 10px;
-}
-
-.section__form--button {
-  background-color: teal;
-  color: #fff;
-  cursor: pointer;
-  border: none;
-  transition: 1s;
-}
-
-.section__form--button:hover {
-  background-color: hsl(180, 100%, 35%);
-  transform: scale(1.1);
-}
-
-.section__form--button:active {
-  background-color: hsl(180, 100%, 45%);
-}
-
-.section__form--item {
-  width: 20%;
-  padding: 8px;
-  margin: 4px 8px;
-}
-
-.section__form--input {
-  border: 1px solid #eee;
-  width: 80%;
-  text-align: left;
-}
-
-@media (max-width: 767px) {
-  .section__form {
-    flex-wrap: wrap;
-  }
-  .section__form--item {
-    width: 100%;
+@media(max-width: 767px) {
+  .section__list {
+    grid-template-columns: 1fr;
   }
 }
