@@ -4,7 +4,7 @@ It's simple, but very useful web-app to organize your day-by-day tasks.
 
 You can add new tasks check it as done and delete when you think it's not anymore imporant, so you're always up to date with your main daily activities.
 
-## [**To-do list - link**](https://walmarek.github.io/to-do-list/)
+## [**To-do list - link**](https://walmarek.github.io/To-Do-List-JS/)
 
 <h2 align="center">
 Demo
